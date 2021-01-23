@@ -33,8 +33,8 @@ public class Event implements Serializable {
 	private Integer id;
 	
 	@ManyToOne
-	@JoinColumn(name="orderService_id", referencedColumnName = "id")
-	private OrderService orderService;
+	@JoinColumn(name="serviceOrder_id", referencedColumnName = "id")
+	private ServiceOrder orderService;
 	
 	@NotNull
 	@Enumerated(EnumType.STRING)

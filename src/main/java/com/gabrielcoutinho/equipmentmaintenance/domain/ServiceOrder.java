@@ -4,11 +4,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,7 +23,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class OrderService implements Serializable {
+public class ServiceOrder implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -30,8 +33,13 @@ public class OrderService implements Serializable {
 	@OneToMany(mappedBy="orderService")
 	private List<Event> events = new ArrayList<>();
 	
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "client_id", referencedColumnName = "id")
 	private Client client;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "equipment_id", referencedColumnName = "id")
 	private Equipment equipment;
 	private String problem;
-	private boolean closed;
+	private int closed;
 }
