@@ -45,7 +45,7 @@ Fields on console:
 -User Name: sa
 -Password:
 ```
-### Routes
+### Routes:
 ```shell
 GET - http://localhost:8080/orders
 GET - http://localhost:8080/orders/opens
@@ -57,7 +57,7 @@ POST - http://localhost:8080/orders/events/{id}
 PUT - http://localhost:8080/orders/close/{id}
 ```
 
-### Examples body:
+### Body examples:
 Some examples JSON to facilitate test and execution <br />
 
 ```shell
