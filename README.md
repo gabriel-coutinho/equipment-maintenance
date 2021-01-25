@@ -14,7 +14,7 @@ $ Runing on http://localhost:8080
 ```shell
 <groupId>org.springframework.boot</groupId>
 <artifactId>spring-boot-starter-parent</artifactId>
-<version>2.4.0-SNAPSHOT</version>
+<version>2.4.2</version>
 ```
 ```shell
 <java.version>11</java.version>
@@ -29,15 +29,19 @@ $ Runing on http://localhost:8080
 <artifactId>h2</artifactId>
 <scope>runtime</scope>
 ```
-
+```shell
+<groupId>org.projectlombok</groupId>
+<artifactId>lombok</artifactId>
+<scope>provided</scope>
+```
 ### To acess the database:
 
 Only when app is running <br />
 ```shell
-URL http://localhost:8080/h2-console <br /> <br />
-Fields on console: <br />
--Driver Class: org.h2.Driver <br />
--JDBC URL:	jdbc:h2:file:~/test <br />
--User Name: sa <br />
+URL http://localhost:8080/h2-console
+Fields on console: 
+-Driver Class: org.h2.Driver 
+-JDBC URL:	jdbc:h2:mem:equipmentmaintenance
+-User Name: sa
 -Password:
 ```
