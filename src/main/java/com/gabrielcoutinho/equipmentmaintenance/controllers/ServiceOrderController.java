@@ -142,7 +142,7 @@ public class ServiceOrderController {
 	 * @param id from service order
 	 * @return Persisted event
 	 */
-	@PostMapping("/event/{id:[0-9]+}")
+	@PostMapping("/events/{id:[0-9]+}")
 	public ResponseEntity<EventDto> addEvent(@Valid @RequestBody EventDto eventDto, @PathVariable Integer id) {
 		log.info("Adding a event at service order ID: {}", id);
 		eventDto.setOrderId(id);
@@ -153,7 +153,7 @@ public class ServiceOrderController {
 	}
 	
 	/**
-	 * Close a service order
+	 * Close a service order. OPEN = 0; CLOSED = 1;
 	 * @param id from service order
 	 * @return Void
 	 */
