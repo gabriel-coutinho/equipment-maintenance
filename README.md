@@ -1,5 +1,5 @@
 ## Equipment Maintenance System
-This app is a Springboot backend of a equipment maintenance system. You can create a service order, list all or opens, find, delete and update by id, 
+This app is a Springboot backend of a equipment maintenance system. You can create a service order, list all or opens, find, delete and update by id, add a event or close a service order. 
 
 ### To start:
 
@@ -112,5 +112,9 @@ POST - http://localhost:8080/orders/events/1
 {
     "type": "PROBLEM",
     "message": "Missing screw"
+}
+{
+    "type": "ADVANCE",
+    "message": "Product left for delivery"
 }
 ```
