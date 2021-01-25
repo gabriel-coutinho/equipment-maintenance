@@ -9,7 +9,7 @@ run as Spring Boot App the class com.gabrielcoutinho.equipmentmaintenance.Equipm
 $ Runing on http://localhost:8080
 ```
 
-## Technologies
+### Technologies:
 
 ```shell
 <groupId>org.springframework.boot</groupId>
@@ -44,4 +44,76 @@ Fields on console:
 -JDBC URL:	jdbc:h2:mem:equipmentmaintenance
 -User Name: sa
 -Password:
+```
+### Routes
+```shell
+GET - http://localhost:8080/orders
+GET - http://localhost:8080/orders/opens
+GET - http://localhost:8080/orders/{id}
+POST - http://localhost:8080/orders
+DELETE - http://localhost:8080/orders/{id}
+PUT - http://localhost:8080/orders/{id}
+POST - http://localhost:8080/orders/events/{id}
+PUT - http://localhost:8080/orders/close/{id}
+```
+
+### Examples body:
+Some examples JSON to facilitate test and execution <br />
+
+```shell
+POST - http://localhost:8080/orders
+{
+    "client": {
+        "id":"1",
+        "address": {
+            "id":"1",
+            "postalCode": "55555555",
+            "streetName": "Nameless street",
+            "number": "0",
+            "complements": "House",
+            "neighbourhood": "Gotham"
+        },
+        "email": "gabriel@test.com",
+        "phone": "83988888888"
+    },
+    "equipment": {
+        "id":"1",
+        "model": "LG",
+        "type": "TV"
+    },
+    "problem": "Screen problem"
+}
+```
+
+```shell
+PUT - http://localhost:8080/orders/1
+{
+    "client": {
+        "id":"1",
+        "address": {
+            "id":"1",
+            "postalCode": "50680340",
+            "streetName": "Nameless street",
+            "number": "0",
+            "complements": "House",
+            "neighbourhood": "Gotham"
+        },
+        "email": "gabriel_mudado@test.com",
+        "phone": "83977777777"
+    },
+    "equipment": {
+        "id":"1",
+        "model": "Samsung",
+        "type": "Phone"
+    },
+    "problem": "Changed problem"
+}
+```
+
+```shell
+POST - http://localhost:8080/orders/events/1
+{
+    "type": "PROBLEM",
+    "message": "Missing screw"
+}
 ```
