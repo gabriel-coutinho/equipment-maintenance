@@ -41,7 +41,7 @@ Only when app is running <br />
 URL http://localhost:8080/h2-console
 Fields on console: 
 -Driver Class: org.h2.Driver 
--JDBC URL:	jdbc:h2:mem:equipmentmaintenance
+-JDBC URL: jdbc:h2:mem:equipmentmaintenance
 -User Name: sa
 -Password:
 ```
