@@ -64,9 +64,7 @@ Some examples JSON to facilitate test and execution <br />
 POST - http://localhost:8080/orders
 {
     "client": {
-        "id":"1",
         "address": {
-            "id":"1",
             "postalCode": "55555555",
             "streetName": "Nameless street",
             "number": "0",
@@ -77,7 +75,6 @@ POST - http://localhost:8080/orders
         "phone": "83988888888"
     },
     "equipment": {
-        "id":"1",
         "model": "LG",
         "type": "TV"
     },
