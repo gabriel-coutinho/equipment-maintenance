@@ -35,6 +35,7 @@ public class Equipment implements Serializable {
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		return result;
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -56,6 +57,4 @@ public class Equipment implements Serializable {
 			return false;
 		return true;
 	}
-	
-	
 }

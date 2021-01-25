@@ -10,11 +10,11 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class ServiceOrderOutputDto {
+public class ServiceOrderDto {
 	private Integer id;
 	private List<EventDto> events = new ArrayList<>();
 	private ClientDto client;
 	private EquipmentDto equipment;
 	private String problem;
-	private int closed;
+	private int open;
 }

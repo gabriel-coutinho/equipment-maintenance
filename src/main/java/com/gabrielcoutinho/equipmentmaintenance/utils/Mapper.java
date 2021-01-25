@@ -11,9 +11,13 @@ import com.gabrielcoutinho.equipmentmaintenance.dtos.AddressDto;
 import com.gabrielcoutinho.equipmentmaintenance.dtos.ClientDto;
 import com.gabrielcoutinho.equipmentmaintenance.dtos.EquipmentDto;
 import com.gabrielcoutinho.equipmentmaintenance.dtos.EventDto;
-import com.gabrielcoutinho.equipmentmaintenance.dtos.ServiceOrderInputDto;
-import com.gabrielcoutinho.equipmentmaintenance.dtos.ServiceOrderOutputDto;
+import com.gabrielcoutinho.equipmentmaintenance.dtos.ServiceOrderDto;
 
+/**
+ * Map entities from dtos and dtos from entities
+ * @author gabri
+ *
+ */
 public class Mapper {
 	
 	public Address fromDto(AddressDto dto) {
@@ -67,10 +71,11 @@ public class Mapper {
 		dto.setMessage(obj.getMessage());
 		dto.setType(obj.getType());
 		dto.setTime(obj.getTime());
+		dto.setOrderId(obj.getOrderService().getId());
 		return dto;
 	}
 	
-	public ServiceOrder fromInputDto(ServiceOrderInputDto dto) {
+	public ServiceOrder fromDto(ServiceOrderDto dto) {
 		ServiceOrder obj = new ServiceOrder();
 		Client client = fromDto(dto.getClient());
 		Equipment equipment = fromDto(dto.getEquipment());
@@ -80,14 +85,16 @@ public class Mapper {
 			obj.getEvents().forEach(event -> event.setOrderService(obj));
 		}
 		
+		obj.setId(dto.getId());
+		obj.setOpen(dto.getOpen());
 		obj.setClient(client);
 		obj.setEquipment(equipment);
 		obj.setProblem(dto.getProblem());
 		return obj;
 	}
 	
-	public ServiceOrderOutputDto fromObj(ServiceOrder obj) {
-		ServiceOrderOutputDto dto = new ServiceOrderOutputDto();
+	public ServiceOrderDto fromObj(ServiceOrder obj) {
+		ServiceOrderDto dto = new ServiceOrderDto();
 		ClientDto clientDto = fromObj(obj.getClient());
 		EquipmentDto equipmentDto = fromObj(obj.getEquipment());
 		
@@ -97,10 +104,10 @@ public class Mapper {
 		}
 		
 		dto.setId(obj.getId());
+		dto.setOpen(obj.getOpen());
 		dto.setClient(clientDto);
 		dto.setEquipment(equipmentDto);
 		dto.setProblem(obj.getProblem());
 		return dto;
 	}
-	
 }

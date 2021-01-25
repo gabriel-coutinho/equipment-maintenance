@@ -6,4 +6,6 @@ import com.gabrielcoutinho.equipmentmaintenance.domain.Event;
 
 public interface EventService {
 	List<Event> persistEvents(List<Event> events);
+	
+	Event persist(Event event);
 }
